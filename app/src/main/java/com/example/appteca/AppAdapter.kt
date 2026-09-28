@@ -18,24 +18,20 @@ class AppAdapter(
     }
 
 
-    // Pregunta 2: ¿cómo se crea una fila vacía? (se llama pocas veces: recicla)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             AppViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_app, parent, false)
         return AppViewHolder(v)
     }
-    // Pregunta 3: ¿cómo se llena la fila con el dato de la posición?
-// (se llama TODO el tiempo: cada reciclado pasa por acá)
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
         val app = items[position]
         holder.tvNombre.text = app.nombre
         holder.tvCategoria.text = app.categoria
-        holder.tvEstrella.text = if (app.esFavorita) " " else "☆"
+        holder.tvEstrella.text = if (app.esFavorita) "★" else "☆"
         holder.itemView.setOnClickListener { onAppClick(app) }
         holder.tvEstrella.setOnClickListener { onFavoritoClick(app) }
     }
-    // Pregunta 1: ¿cuántos hay?
     override fun getItemCount() = items.size
     fun actualizarLista(nueva: List<App>) {
         items = nueva

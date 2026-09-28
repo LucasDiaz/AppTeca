@@ -1,4 +1,5 @@
-package com.example.appteca
+package com.example.appteca3
+
 object Catalogo {
     val apps = mutableListOf(
         App(1, "WhatsApp", "Mensajería", "La uso para todo, hasta para mandarme cosas a mí mismo"),

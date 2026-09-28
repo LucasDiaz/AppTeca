@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AppTeca"
 include(":app")
+include(":app3")
